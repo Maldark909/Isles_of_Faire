@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "Isles_of_Faire",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "E:\\Epic\\Unreal Engine\\UE_5.1"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	}
+}

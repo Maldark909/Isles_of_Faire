@@ -3,19 +3,32 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/SkeletalMeshComponent.h"
+#include "Engine/Texture2D.h"
+#include "Components/StaticMeshComponent.h"
 #include "TP_WeaponComponent.generated.h"
 
 class AIsles_of_FaireCharacter;
 
 UCLASS(Blueprintable, BlueprintType, ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class ISLES_OF_FAIRE_API UTP_WeaponComponent : public USkeletalMeshComponent
+class ISLES_OF_FAIRE_API UTP_WeaponComponent : public UStaticMeshComponent
 {
 	GENERATED_BODY()
 
 public:
+
+	//Fuck, we're gonna have a hard ass time with animating.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=WeaponVisuals)
+	UTexture2D *WeaponIdleTexture;
+	
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=WeaponVisuals)
+	UTexture2DArray *WeaponShootAnimation;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=WeaponVisuals)
+	UTexture2DArray *WeaponReloadAnimation;
+
 	/** Projectile class to spawn */
-	UPROPERTY(EditDefaultsOnly, Category=Projectile)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Projectile)
 	TSubclassOf<class AIsles_of_FaireProjectile> ProjectileClass;
 
 	/** Sound to play each time we fire */
